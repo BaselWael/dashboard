@@ -9,6 +9,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\SettingController;
+use App\Http\Livewire\Exams;
+use App\Http\Livewire\questions;
+use App\Http\Livewire\ToolsManage;
 
 
 
@@ -19,6 +22,9 @@ Route::get('/', function () {return view('front.index');})->name('home');
 
 Route::prefix('admin')->middleware(['auth','CheckRole:ADMIN','ActiveAccount'])->name('admin.')->group(function () {
     Route::get('/',[AdminController::class,'index'])->name('index');
+    Route::get('/exams',Exams::class)->name('exams');
+    Route::get('/questions',questions::class)->name('questions');
+    Route::get('/tools',ToolsManage::class)->name('tools');
 
 
     //Route::get('/profile',[AdminController::class,'upload_image']);

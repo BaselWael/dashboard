@@ -130,10 +130,6 @@ class Controller extends BaseController
                 else if ($image2->width()<2000 && $image2->width()>=1000)
                     $quality=90;
 
-                $imagick = new \Imagick();
-                $imagick->readImageBlob($img);
-                $imagick->setImageCompressionQuality($quality);
-                $img = $imagick->getImageBlob();
             }
             try{
                 \Storage::disk($options["file_system_type"])->put('/'.strtolower($options['visibility']) . $path .$path_small . $filename, $sm_img, $filename);

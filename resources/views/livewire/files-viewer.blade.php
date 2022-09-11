@@ -5,7 +5,7 @@
              <div  style="width:180px;" class="d-inline-block p-2">
                 <div class="col-12 p-0 position-relative">
                     <input type="checkbox" name="selected-files[]" class="position-absolute selected-files" style="right: 5px;top: 5px;width: 25px;height: 25px;opacity: .9;z-index: -1" value="{{env('STORAGE_URL')}}{{$file->path}}{{$file->name}}" id="checkbox_file_{{$file->id}}" data-id="{{$file->id}}">
-                    <img src="{{env('STORAGE_URL')}}{{$file->path}}{{$file->name}}" style="height: 100px;object-fit: cover;vertical-align: middle;width: 100%;padding: 2px;border-radius: 5px" class="image-file cursor-pointer" data-id="{{$file->id}}">
+                    <img src="{{asset('storage' .'/' .$file->path . $file->name)}}" style="height: 100px;object-fit: cover;vertical-align: middle;width: 100%;padding: 2px;border-radius: 5px" class="image-file cursor-pointer" data-id="{{$file->id}}">
                 </div>
              </div>
             @endforeach
